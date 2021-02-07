@@ -1,4 +1,4 @@
-# flutter_permission_using_bloc
+# Permissions in Flutter Using [flutter-permission-handler](https://github.com/Baseflow/flutter-permission-handler) & [bloc](https://github.com/felangel/bloc)
 
 A new Flutter project.
 

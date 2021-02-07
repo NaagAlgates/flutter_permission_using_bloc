@@ -28,8 +28,8 @@ class _RequestPermissionScreenState extends State<RequestPermissionScreen> {
           child: BlocConsumer<PermissionCubit, PermissionState>(
               listener: (context, state) {
             if (state is AllPermissionsGranted) {
-              Navigator.of(context).pushNamed(
-                RouterPath.FIRST_SCREEN,
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                RouterPath.FIRST_SCREEN, (Route<dynamic> route) => false
               );
             }
           }, listenWhen: (previous, current) {

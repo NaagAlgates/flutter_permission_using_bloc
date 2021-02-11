@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_permission_using_bloc/feature/permission/cubit/permission_file.dart';
-import 'package:flutter_permission_using_bloc/feature/permission/model/permission_repository.dart';
+import 'package:flutter_permission_using_bloc/feature/allatonce/cubit/permission_state.dart';
+import 'package:flutter_permission_using_bloc/model/permission_repository.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionCubit extends Cubit<PermissionState> {

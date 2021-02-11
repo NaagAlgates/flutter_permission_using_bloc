@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   void navigateToNextScreen() {
     Navigator.of(context).pushNamedAndRemoveUntil(
-        RouterPath.PERMISSION_SCREEN, (Route<dynamic> route) => false);
+        RouterPath.MAINMENU_SCREEN, (Route<dynamic> route) => false);
   }
 
   @override

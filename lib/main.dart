@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_permission_using_bloc/router/router.dart';
-
-import 'feature/permission/model/permission_repository.dart';
 import 'helper/bloc_observer.dart';
+import 'model/permission_repository.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: appRouter.onGenerateRoute,
     );
   }

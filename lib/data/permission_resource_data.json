@@ -1,0 +1,23 @@
+{
+    "camera":{
+        "title":"Camera Permission Needed",
+        "icon":"https://icons.iconarchive.com/icons/yohproject/cute/128/camera-2-icon.png",
+        "description":"To server you the best user experience, we need you to allow the camera access.",
+        "buttonText":"Allow Camera",
+        "errorMessage":"Sorry. Without the camera permission we can't proceed further"
+        },
+        "location":{
+        "title":"Location access Needed",
+        "icon":"https://icons.iconarchive.com/icons/mag1cwind0w/akisame/128/Location-icon.png",
+        "description":"To server you the best user experience, we need you to allow the location access.",
+        "buttonText":"Allow Location",
+        "errorMessage":"Sorry. Without the location permission we can't proceed further"
+        },
+        "storage":{
+        "title":"Storage access Needed",
+        "icon":"https://icons.iconarchive.com/icons/raindropmemory/laboratory/128/Storage-Box-icon.png",
+        "description":"To server you the best user experience, we need you to allow the location access.",
+        "buttonText":"Allow Location",
+        "errorMessage":"Sorry. Without the storage permission we can't proceed further"
+        }
+}

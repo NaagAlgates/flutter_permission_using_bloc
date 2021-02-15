@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_permission_using_bloc/feature/permission/cubit/permission_cubit.dart';
-import 'package:flutter_permission_using_bloc/feature/permission/cubit/permission_file.dart';
+import 'package:flutter_permission_using_bloc/feature/allatonce/cubit/permission_cubit.dart';
+import 'package:flutter_permission_using_bloc/feature/allatonce/cubit/permission_state.dart';
 import 'package:flutter_permission_using_bloc/router/router_path.dart';
 import 'package:flutter_permission_using_bloc/widgets/custom_button_widget.dart';
 import 'package:flutter_permission_using_bloc/widgets/custom_text_property.dart';

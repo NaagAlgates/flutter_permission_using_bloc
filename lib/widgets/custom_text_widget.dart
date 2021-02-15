@@ -21,7 +21,7 @@ class CustomTextView extends StatelessWidget {
             fontSize: customTextProperty.textSize,
             color: customTextProperty.color,
             fontWeight: customTextProperty.fontWeight),
-        maxLines: 2,
+        maxLines: 5,
       ),
     );
   }

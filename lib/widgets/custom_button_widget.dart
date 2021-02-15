@@ -4,7 +4,9 @@ class CustomMaterialButton extends StatelessWidget {
   final onButtonPressed;
   final buttonText;
 
-  const CustomMaterialButton({Key key, @required this.onButtonPressed, @required this.buttonText}) : super(key: key);
+  const CustomMaterialButton(
+      {Key key, @required this.onButtonPressed, @required this.buttonText})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -12,13 +14,18 @@ class CustomMaterialButton extends StatelessWidget {
       onPressed: onButtonPressed,
       splashColor: Colors.green,
       color: Colors.green,
+      minWidth: MediaQuery.of(context).size.width * 0.8,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(MediaQuery.of(context).size.width*0.05),
+      ),
+      animationDuration: Duration(seconds: 1),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Text(buttonText?.toString()?.toUpperCase()??"DEFAULT",
+        padding: EdgeInsets.all(MediaQuery.of(context).size.width*0.03),
+        child: Text(buttonText?.toString()?.toUpperCase() ?? "DEFAULT",
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.white,
-                fontSize: MediaQuery.of(context).size.height*0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.bold)),
       ),
     );

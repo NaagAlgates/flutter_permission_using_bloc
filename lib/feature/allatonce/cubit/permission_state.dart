@@ -1,7 +1,7 @@
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_permission_using_bloc/feature/permission/model/permission_repository.dart';
+import 'package:flutter_permission_using_bloc/feature/allatonce/model/permission_repository.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 abstract class PermissionState extends Equatable {

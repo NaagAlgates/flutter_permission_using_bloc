@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_permission_using_bloc/feature/allatonce/model/permission_repository.dart';
 import 'package:flutter_permission_using_bloc/router/router.dart';
 import 'helper/bloc_observer.dart';
-import 'model/permission_repository.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

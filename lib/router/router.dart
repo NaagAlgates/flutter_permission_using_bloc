@@ -5,6 +5,7 @@ import 'package:flutter_permission_using_bloc/feature/allatonce/ui/request_permi
 import 'package:flutter_permission_using_bloc/feature/common/home/ui/first_screen.dart';
 import 'package:flutter_permission_using_bloc/feature/common/second/ui/second_screen.dart';
 import 'package:flutter_permission_using_bloc/feature/main/ui/main_menu_screen.dart';
+import 'package:flutter_permission_using_bloc/feature/onebyone/cubit/onebyone_permission_cubit.dart';
 import 'package:flutter_permission_using_bloc/feature/onebyone/ui/request_permission_one_by_one.dart';
 import 'package:flutter_permission_using_bloc/feature/splash/ui/splash_screen.dart';
 import 'package:flutter_permission_using_bloc/router/router_path.dart';
@@ -23,8 +24,8 @@ class AppRouter {
         break;
       case RouterPath.PERMISSION_ONE_BY_ONE:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider<PermissionCubit>(
-                create: (_) => PermissionCubit(),
+            builder: (_) => BlocProvider<OnebyonePermissionCubit>(
+                create: (_) => OnebyonePermissionCubit(),
                 child: RequestPermissionOneByOne()));
         break;
       case RouterPath.FIRST_SCREEN:

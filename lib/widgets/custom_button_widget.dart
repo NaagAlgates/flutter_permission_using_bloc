@@ -12,7 +12,7 @@ class CustomMaterialButton extends StatelessWidget {
     return MaterialButton(
       disabledColor: Colors.grey,
       onPressed: onButtonPressed,
-      splashColor: Colors.greenAccent,
+      splashColor: Colors.green,
       color: Colors.green,
       minWidth: MediaQuery.of(context).size.width * 0.8,
       shape: RoundedRectangleBorder(

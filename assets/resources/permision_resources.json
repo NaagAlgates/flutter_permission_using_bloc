@@ -1,0 +1,23 @@
+{
+  "camera": {
+    "title": "Camera permission needed",
+    "icon": "0xe0c2",
+    "message": "Detailed Camera description",
+    "onSuccess": "Great. We assure that we don't use camera without your knowledge.",
+    "onFailure": "We understand your concern but without the camera permission the app will break."
+  },
+  "locationWhenInUse": {
+    "title": "Location permission needed",
+    "icon": "0xe89a",
+    "message": "Detailed Location description",
+    "onSuccess": "That's cool. We don't need your location always and we will tell you when we need.",
+    "onFailure": "We understand your concern but without the location access the app will not be able to find your preferred direction."
+  },
+  "storage": {
+    "title": "Storage permission needed",
+    "icon": "0xe9b3",
+    "message": "Detailed Storage description",
+    "onSuccess": "Thank you for that. We don't dump data anyways.",
+    "onFailure": "Please understand that without this access you can't download the amaing photos from our app."
+  }
+}

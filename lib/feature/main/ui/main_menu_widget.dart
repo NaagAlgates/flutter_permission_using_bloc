@@ -26,9 +26,9 @@ class MainmenuWidget extends StatelessWidget {
             },
           ),
           CustomMaterialButton(
-            buttonText: "Only one",
+            buttonText: "Coming Soon",
             onButtonPressed: () {
-              Navigator.of(context).pushNamed(RouterPath.PERMISSION_ALL_AT_ONCE);
+              Navigator.of(context).pushNamed("");
             },
           ),
         ],

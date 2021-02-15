@@ -1,14 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_permission_using_bloc/feature/allatonce/cubit/permission_state.dart';
-import 'package:flutter_permission_using_bloc/model/permission_repository.dart';
+import 'package:flutter_permission_using_bloc/feature/allatonce/model/permission_repository.dart';
+import 'package:flutter_permission_using_bloc/helper/app_resource_constants.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionCubit extends Cubit<PermissionState> {
-  List<Permission> permissionList = [
-    Permission.storage,
-    Permission.camera,
-    Permission.locationWhenInUse
-  ];
+
 
   PermissionCubit()
       : super(WaitingForPermission(
@@ -21,7 +18,7 @@ class PermissionCubit extends Cubit<PermissionState> {
   }
 
   Future<void> checkIfPermissionNeeded() async {
-    for (var _currentPermission in permissionList) {
+    for (var _currentPermission in ResourceConstants.permissionList) {
       currentPermission = _currentPermission;
       var status = await _currentPermission.status;
       if (!status.isGranted) {
@@ -34,7 +31,7 @@ class PermissionCubit extends Cubit<PermissionState> {
   }
 
   Future<void> onRequestAllPermission() async {
-    for (var _currentPermission in permissionList) {
+    for (var _currentPermission in ResourceConstants.permissionList) {
       currentPermission = _currentPermission;
       var status = await _currentPermission.status;
 
@@ -53,7 +50,7 @@ class PermissionCubit extends Cubit<PermissionState> {
       }
       print("Permission granted: ${currentPermission.toString()}");
     }
-    for (var _currentPermission in permissionList) {
+    for (var _currentPermission in ResourceConstants.permissionList) {
       var status = await _currentPermission.status;
       if (!status.isGranted) {
         return;
@@ -81,5 +78,5 @@ class PermissionCubit extends Cubit<PermissionState> {
   }
 
   @override
-  String toString() => 'PermissionCubit(permissionList: $permissionList)';
+  String toString() => 'PermissionCubit(permissionList: ${ResourceConstants.permissionList})';
 }

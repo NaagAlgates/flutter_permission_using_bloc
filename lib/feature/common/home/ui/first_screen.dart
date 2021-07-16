@@ -7,7 +7,9 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("First Screen"),),
+      appBar: AppBar(
+        title: Text("First Screen"),
+      ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -15,11 +17,12 @@ class FirstScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text("First screen"),
-            RaisedButton(child: Text("Navigate to Second"),onPressed: (){
-              Navigator.of(context).pushNamed(
-                RouterPath.SECOND_SCREEN
-              );
-            },)
+            ElevatedButton(
+              child: Text("Navigate to Second"),
+              onPressed: () {
+                Navigator.of(context).pushNamed(RouterPath.SECOND_SCREEN);
+              },
+            )
           ],
         ),
       ),

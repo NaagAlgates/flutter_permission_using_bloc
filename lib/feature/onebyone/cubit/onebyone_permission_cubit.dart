@@ -66,7 +66,7 @@ class OnebyonePermissionCubit extends Cubit<OnebyonePermissionState> {
   void onRequestPermisionOneByOne() async {
     for (var _currentPermission in ResourceConstants.permissionList) {
       var status = await _currentPermission.status;
-      if (status.isUndetermined || status.isDenied) {
+      if (status.isDenied) {
         var _currentPermissionString = _currentPermission.toString().split('.');
         var tempMapdata = fetchPermission(_currentPermissionString);
         // var isPermissionAvailable =
@@ -81,8 +81,7 @@ class OnebyonePermissionCubit extends Cubit<OnebyonePermissionState> {
         status = await _currentPermission.request();
         if (status.isDenied) {
           emit(CurrentPermissionDenied(
-              permissionData: PermissionRequestingModel.fromMap(
-                 tempMapdata )));
+              permissionData: PermissionRequestingModel.fromMap(tempMapdata)));
           return;
         } else if (status.isPermanentlyDenied) {
           onPermissionPermanentlyDenied();

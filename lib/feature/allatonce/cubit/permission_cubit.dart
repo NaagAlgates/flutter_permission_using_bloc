@@ -5,8 +5,6 @@ import 'package:flutter_permission_using_bloc/helper/app_resource_constants.dart
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionCubit extends Cubit<PermissionState> {
-
-
   PermissionCubit()
       : super(WaitingForPermission(
             permissionRepository: PermissionRepository.waiting()));
@@ -35,7 +33,7 @@ class PermissionCubit extends Cubit<PermissionState> {
       currentPermission = _currentPermission;
       var status = await _currentPermission.status;
 
-      if (status.isUndetermined || status.isDenied) {
+      if (status.isDenied) {
         status = await _currentPermission.request();
         if (status.isDenied) {
           onPermissionDenied();
@@ -78,5 +76,6 @@ class PermissionCubit extends Cubit<PermissionState> {
   }
 
   @override
-  String toString() => 'PermissionCubit(permissionList: ${ResourceConstants.permissionList})';
+  String toString() =>
+      'PermissionCubit(permissionList: ${ResourceConstants.permissionList})';
 }

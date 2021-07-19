@@ -29,7 +29,9 @@ jobs:
           COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
     
     - run: |
-            echo "repo_token: $COVERALLS_TOKEN" > .coveralls.yml
+            echo "repo_token: ${{ secrets.COVERALLS_TOKEN }}" > .coveralls.yml
+            ls -a
+            cat .coveralls.yml
             
             
     - run: sudo gem install coveralls-lcov

@@ -2,7 +2,7 @@
 
 ![Flutter CI](https://github.com/NaagAlgates/flutter_permission_using_bloc/workflows/Flutter%20CI/badge.svg)
 
-[![Coverage Status](https://coveralls.io/repos/github/NaagAlgates/flutter_permission_using_bloc/badge.svg)](https://coveralls.io/github/NaagAlgates/flutter_permission_using_bloc)
+[![Coverage Status](https://coveralls.io/repos/github/NaagAlgates/flutter_permission_using_bloc/badge.svg?branch=master)](https://coveralls.io/github/NaagAlgates/flutter_permission_using_bloc?branch=master)
 
 A new Flutter project demo on getting permissions from the user without repeating the same code in different places. 
 

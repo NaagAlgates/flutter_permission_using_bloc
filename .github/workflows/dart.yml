@@ -30,7 +30,9 @@ jobs:
     
     - run: |
             echo "repo_token: $COVERALLS_TOKEN" > .coveralls.yml
-            gem install coveralls-lcov
+            
+            
+    - run: sudo gem install coveralls-lcov
 
     - run: flutter test --coverage
     

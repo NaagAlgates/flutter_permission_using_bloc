@@ -24,5 +24,16 @@ jobs:
     - run: flutter analyze .
     
     - run: flutter test
+
+      env:
+          COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+    
+    - run: |
+            echo "repo_token: $COVERALLS_TOKEN" > .coveralls.yml
+            gem install coveralls-lcov
+
+    - run: flutter test --coverage
+    
+    - run: coveralls-lcov coverage/lcov.info
     
     - run: flutter build apk --no-tree-shake-icons

@@ -8,7 +8,6 @@ class PermissionCubit extends Cubit<PermissionState> {
   PermissionCubit()
       : super(WaitingForPermission(
             permissionRepository: PermissionRepository.waiting()));
-  Permission currentPermission;
 
   void onAllPermissionGranted() {
     emit(AllPermissionsGranted(
@@ -16,8 +15,7 @@ class PermissionCubit extends Cubit<PermissionState> {
   }
 
   Future<void> checkIfPermissionNeeded() async {
-    for (var _currentPermission in ResourceConstants.permissionList) {
-      currentPermission = _currentPermission;
+    for (Permission _currentPermission in ResourceConstants.permissionList) {
       var status = await _currentPermission.status;
       if (!status.isGranted) {
         emit(PermissionNeeded(
@@ -30,23 +28,22 @@ class PermissionCubit extends Cubit<PermissionState> {
 
   Future<void> onRequestAllPermission() async {
     for (var _currentPermission in ResourceConstants.permissionList) {
-      currentPermission = _currentPermission;
       var status = await _currentPermission.status;
 
       if (status.isDenied) {
         status = await _currentPermission.request();
         if (status.isDenied) {
-          onPermissionDenied();
+          onPermissionDenied(_currentPermission);
           return;
         }
       } else if (status.isPermanentlyDenied) {
-        onPermissionPermanentlyDenied();
+        onPermissionPermanentlyDenied(_currentPermission);
         return;
       } else if (status.isRestricted) {
-        onPermissionRestricted();
+        onPermissionRestricted(_currentPermission);
         return;
       }
-      print("Permission granted: ${currentPermission.toString()}");
+      print("Permission granted: ${_currentPermission.toString()}");
     }
     for (var _currentPermission in ResourceConstants.permissionList) {
       var status = await _currentPermission.status;
@@ -57,19 +54,19 @@ class PermissionCubit extends Cubit<PermissionState> {
     onAllPermissionGranted();
   }
 
-  void onPermissionDenied() {
+  void onPermissionDenied(Permission currentPermission) {
     emit(PermissionDenied(
         currentPermission: currentPermission,
         permissionRepository: PermissionRepository.denied()));
   }
 
-  void onPermissionPermanentlyDenied() {
+  void onPermissionPermanentlyDenied(Permission currentPermission) {
     emit(PermissionPermanentlyDenied(
         currentPermission: currentPermission,
         permissionRepository: PermissionRepository.permanentlyDenied()));
   }
 
-  void onPermissionRestricted() {
+  void onPermissionRestricted(Permission currentPermission) {
     emit(PermissionRestricted(
         currentPermission: currentPermission,
         permissionRepository: PermissionRepository.permanentlyDenied()));
